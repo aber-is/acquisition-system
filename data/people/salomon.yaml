@@ -1,0 +1,337 @@
+# Person profile: Salomon Aengenheyster-Aber
+#
+# Capabilities cite the evidence library under data/evidence/. Each citation's note says
+# what Salomon contributed to that project — that note is what makes the claim his.
+#
+id: salomon
+name: Salomon Aengenheyster-Aber
+
+location:
+  country: CH
+  city: Zürich
+
+availability:
+  as_of: 2026-09-28
+
+preferred_workload:
+  maximum_percentage: 36
+
+languages:
+  - language: de
+    level: native
+    notes: Out of practice. Written technical German is evidenced; spoken fluency is rusty.
+    evidence:
+      - evidence_id: isa-isisave-analysis
+        note: Bilingual DE/EN installation documentation, written and typeset.
+      - evidence_id: integra-validation-tool
+        note: German and English localisation of the desktop application.
+  - language: en
+    level: native
+    evidence:
+      - evidence_id: isa-isisave-analysis
+        note: Bilingual DE/EN installation documentation, written and typeset.
+
+# Both empty deliberately: open to any role type, nothing excluded.
+#
+# Do not populate these by inference from past work. History evidences what can be done,
+# not what is wanted — AI consulting appears nowhere in the evidence below and is of
+# interest anyway. An inferred exclusion is worse still, since it would suppress whole
+# categories on the grounds that they are unfamiliar.
+#
+# Fill these from decisions instead: a role type declined on review is a stated preference
+# with a cause behind it.
+preferred_role_types: []
+excluded_role_types: []
+
+eligibility:
+  - kind: citizenship
+    country: DE
+    description: >-
+      German citizen, and therefore an EU national covered by the Switzerland-EU agreement
+      on the free movement of persons.
+    holds: true
+
+  - kind: citizenship
+    country: GB
+    description: >-
+      British citizen. Relevant to work in the United Kingdom and to holding office in
+      Aber Industrial Solutions Ltd, which is UK-registered. It does not carry EU free
+      movement rights in Switzerland; the German citizenship above is the route there.
+    holds: true
+
+  - kind: work_permit
+    country: CH
+    description: >-
+      Currently resident on a Swiss student permit for studies at ETH Zürich. Whether the
+      permit caps working hours is unresolved, and EU nationals may not be subject to the
+      student hour limit at all. The workload above is recorded as a preference, so nothing
+      currently treats a legal cap as established; confirm with the cantonal migration
+      office before relying on either reading.
+    holds: true
+
+commercial_expectations:
+  minimum_rate:
+    unit: hour
+    minimum:
+      amount: "100"
+      currency: CHF
+
+credentials:
+  - id: eth-bsc-mathematics
+    kind: qualification
+    name: BSc Mathematics (D-MATH)
+    issuer: ETH Zürich
+    status: in_progress
+    expected_completion:
+      description: 02/2027
+
+capabilities:
+  - subject: go
+    label: Go
+    evidence:
+      - evidence_id: tfa-tga-form-automation
+        note: ~7,100 LOC Go CLI with six test suites, maintained over five years.
+      - evidence_id: svg-to-dfm-toolchain
+        note: Author of the dfm, svg, idf and svg2dfm modules.
+      - evidence_id: mira-mobile-maintenance
+        note: Author of mira-push, an APNS push server in Go.
+
+  - subject: python
+    label: Python
+    evidence:
+      - evidence_id: isa-isisave-analysis
+        note: isa-cli, log import and indexing into SQLite.
+      - evidence_id: mis-manufacturing-information-system
+        note: mis-flask front end and mis-sync MS SQL to Solr synchronisation.
+
+  - subject: csharp
+    label: C# / .NET 8
+    evidence:
+      - evidence_id: integra-validation-tool
+        note: ~24,400 LOC across 20 test projects, sole author.
+
+  - subject: typescript
+    label: TypeScript
+    evidence:
+      - evidence_id: isa-isisave-analysis
+        note: isa-server (Node.js) and isa-client (React + Vite).
+
+  - subject: c
+    label: C
+    evidence:
+      - evidence_id: dat2xlsx-plc-operand-extraction
+        note: Sole author; written against libxlsxwriter, pcre2, libcsv and xlsxio.
+
+  - subject: cpp
+    label: C++
+    evidence:
+      - evidence_id: mira-mobile-maintenance
+        note: rsm-server, cpprestsdk backend serving HTTP/JSON and a legacy binary TCP protocol.
+
+  - subject: swift
+    label: Swift
+    evidence:
+      - evidence_id: mira-mobile-maintenance
+        note: ~34k LOC iOS app shipped from v3.5.x to v3.6.1.
+
+  - subject: nix
+    label: Nix and NixOS
+    evidence:
+      - evidence_id: cloud-server-config
+        note: ~5,400 LOC of Nix across two production hosts, sole author.
+      - evidence_id: tfa-tga-form-automation
+        note: Flake pinning the toolchain and fonts for reproducible output.
+
+  - subject: infrastructure-as-code
+    evidence:
+      - evidence_id: cloud-server-config
+        note: disko partitioning, LUKS with initrd SSH unlock, impermanence.
+
+  - subject: monitoring
+    evidence:
+      - evidence_id: cloud-server-config
+        note: Grafana, Loki and Alloy over mTLS, with custom dashboards and alerts.
+
+  - subject: backups
+    evidence:
+      - evidence_id: cloud-server-config
+        note: Three restic to B2 backup sets with weekly integrity checks and a tested restore.
+
+  - subject: secrets-management
+    evidence:
+      - evidence_id: cloud-server-config
+        note: agenix with 19 encrypted secrets and scripted key rotation.
+
+  - subject: information-security
+    evidence:
+      - evidence_id: cloud-server-config
+        note: Hardening, ClamAV with an alerting canary, automated patching for A.8.8.
+      - evidence_id: iso-27001-certification-programme
+        note: Built and ran the technical half of the certification response.
+
+  - subject: ci-cd
+    evidence:
+      - evidence_id: integra-validation-tool
+        note: Windows release pipeline in GitHub Actions.
+      - evidence_id: cloud-server-config
+        note: Self-hosted ARM64 GitHub Actions runner for the organisation.
+
+  - subject: static-analysis
+    evidence:
+      - evidence_id: integra-validation-tool
+        note: Pluggable rule engine over four project formats, CLI and UI on the same rules.
+
+  - subject: software-testing
+    label: Test engineering
+    evidence:
+      - evidence_id: integra-validation-tool
+        note: >-
+          20 test projects including headless Avalonia UI tests; characterization tests
+          written to pin a cache-staleness risk before changing it, and a full-project
+          regression baseline established before a large refactor.
+      - evidence_id: iportal-project-estate
+        note: >-
+          The 72 version-controlled projects double as a regression corpus: regenerating a
+          building and diffing the result is how toolchain changes are verified.
+      - evidence_id: dat2xlsx-plc-operand-extraction
+        note: Fixture-based regression tests in CI.
+
+  - subject: siemens-step7
+    label: Siemens STEP 7 (AWL)
+    evidence:
+      - evidence_id: integra-validation-tool
+        note: Custom AWL parser, function-group catalogue, DFI buffer scanner.
+      - evidence_id: dat2xlsx-plc-operand-extraction
+        note: Operand extraction from Siemens DAT files, including AWL quirks.
+
+  - subject: siemens-tia-portal
+    label: Siemens TIA Portal
+    evidence:
+      - evidence_id: integra-validation-tool
+        note: TIA project parser, reader and tree builder.
+      - evidence_id: tfa-tga-form-automation
+        note: Symbolic TIA and classic absolute STEP 7 addressing handled per PLC.
+
+  - subject: integra-iportal
+    label: Integra iPortal and DesignerPro
+    evidence:
+      - evidence_id: tfa-tga-form-automation
+        note: Generates complete iPortal projects, including the IDF form container format.
+      - evidence_id: iportal-project-estate
+        note: Built and maintained the 72-project estate and the template library.
+      - evidence_id: integra-validation-tool
+        note: IDF reader and DesignerPro form parser.
+
+  - subject: hmi-engineering
+    evidence:
+      - evidence_id: iportal-project-estate
+        note: 72 building projects plus the reusable template library.
+
+  - subject: scada-engineering-automation
+    evidence:
+      - evidence_id: tfa-tga-form-automation
+        note: Generates complete iPortal projects from a 51-column Excel specification.
+      - evidence_id: svg-to-dfm-toolchain
+        note: Wrote the vector-to-HMI compiler, including font metrics from scratch.
+
+  - subject: plc-addressing
+    evidence:
+      - evidence_id: iportal-project-estate
+        note: Templates writing setpoints back to the PLC in both symbolic and absolute addressing.
+      - evidence_id: tfa-tga-form-automation
+        note: Per-PLC selection between symbolic and absolute addressing.
+
+  - subject: reverse-engineering
+    evidence:
+      - evidence_id: svg-to-dfm-toolchain
+        note: Delphi DFM parser-printer plus a typographically accurate SVG to UI compiler.
+
+  - subject: apache-solr
+    evidence:
+      - evidence_id: mis-manufacturing-information-system
+        note: Solr 8.11 configsets, security.json, Windows service installation.
+
+  # Sole author of roughly 100 of the organisation's 131 repositories. For a freelance
+  # engagement this is the load-bearing fact: products designed, built, released, documented
+  # and supported without a team to divide the work between.
+  - subject: end-to-end-ownership
+    label: End-to-end product ownership
+    evidence:
+      - evidence_id: isa-isisave-analysis
+        note: >-
+          A four-component product — CLI, server, web client and report generator — designed
+          and built end to end, shipped as a packaged Windows release with bilingual
+          installation documentation he wrote and typeset.
+      - evidence_id: mis-manufacturing-information-system
+        note: >-
+          Search index, synchronisation service and production front end built end to end,
+          then deployed and documented on constrained plant infrastructure.
+      - evidence_id: integra-validation-tool
+        note: >-
+          ~24,400 LOC across parsers, rule engine, CLI and desktop UI, sole author, including
+          the release pipeline and the test strategy.
+      - evidence_id: tfa-tga-form-automation
+        note: Maintained as the company's core revenue-generating tool for five years.
+
+  - subject: production-environment-delivery
+    label: Delivery in live production environments
+    evidence:
+      - evidence_id: mis-manufacturing-information-system
+        note: >-
+          Deployed to the plant floor on Windows Server 2012 R2 with a locked-down registry
+          and no access to PyPI: embedded Python, hand-transplanted site-packages and
+          NSSM-wrapped Windows services, documented so the deployment could be repeated by
+          someone else.
+      - evidence_id: iportal-project-estate
+        note: >-
+          72 SCADA projects in continuous production across two Mercedes-Benz plants.
+          Toolchain changes are verified by regenerating a building and diffing the output
+          rather than by trying them against a live system.
+      - evidence_id: mira-mobile-maintenance
+        note: >-
+          Cut and shipped every release from v3.5.8 to v3.5.15 out across plants through an
+          in-house distribution site, including fixing a startup crash in an app already in
+          production use by maintenance staff.
+
+  - subject: iso-9001
+    evidence:
+      - evidence_id: management-system-docs-as-code
+        note: Built the docs-as-code management system covering both standards.
+
+  - subject: iso-27001
+    evidence:
+      - evidence_id: management-system-docs-as-code
+        note: Statement of Applicability, registers and PR-based document change control.
+      - evidence_id: iso-27001-certification-programme
+        note: Technical half of the response; certified with zero major nonconformities.
+
+  - subject: technical-leadership
+    evidence:
+      - evidence_id: technical-and-it-lead-role
+        note: Top management jointly with the director, and Technical and IT Lead.
+
+domains:
+  - subject: automotive-manufacturing
+    label: Automotive manufacturing
+    evidence:
+      - evidence_id: mira-mobile-maintenance
+        note: Shipped releases deployed across Mercedes-Benz Sindelfingen, Hamburg and Rastatt.
+      - evidence_id: mis-manufacturing-information-system
+        note: Built the plant-floor fault and stoppage system end to end.
+      - evidence_id: iportal-project-estate
+        note: Building-technology projects across two Mercedes-Benz plants.
+
+  - subject: building-services-tga
+    label: Building services (TGA)
+    evidence:
+      - evidence_id: tfa-tga-form-automation
+        note: The tool the company's TGA projects are generated with.
+      - evidence_id: iportal-project-estate
+        note: 66 Sindelfingen and 5 Hamburg buildings, B3 through B740.
+
+  - subject: industrial-automation
+    evidence:
+      - evidence_id: integra-validation-tool
+        note: Static analysis of customer PLC and HMI projects against programming standards.
+      - evidence_id: dat2xlsx-plc-operand-extraction
+        note: PLC operand extraction tooling.

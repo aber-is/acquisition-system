@@ -1,0 +1,136 @@
+# SYNTHETIC EXAMPLE — not a real posting. Written to exercise the model against a formal
+# tender: mandatory qualification and eligibility requirements, an estimated contract
+# value, a hard submission deadline, and no workload at all.
+#
+# Replace with real SIMAP publications as soon as any are collected.
+#
+# The extraction methods say how each value WOULD be derived by the pipeline, since that is
+# what the example is for: source_metadata for a structured listing field, rule_based for a
+# deterministic text rule, llm where the wording genuinely needs interpreting. No extractor
+# is named and no confidence given, because no normalizer exists yet to name or report one.
+
+id: simap-framework-industrial-software-2026
+opportunity_type: company_opportunity
+title: Rahmenvertrag industrielle Softwareentwicklung und SCADA-Engineering
+client: Kanton Zürich, Amt für Immobilien
+source_id: simap
+source_url: https://www.simap.ch/shabforms/servlet/Search?PROJECT_ID=000000
+original_text: |
+  Offene Ausschreibung (Dienstleistungsauftrag)
+
+  Gegenstand: Abschluss eines Rahmenvertrags über vier Jahre für industrielle
+  Softwareentwicklung, SCADA-/HMI-Engineering und Gebäudeleittechnik-Integration.
+
+  Geschätzter Auftragswert über die Vertragsdauer: CHF 1'200'000 (exkl. MWST)
+
+  Eignungskriterien:
+  - Gültiges Zertifikat ISO 9001 (zwingend, Nachweis mit Angebot)
+  - Gültiges Zertifikat ISO 27001 (zwingend, Nachweis mit Angebot)
+  - Mindestens drei Referenzprojekte vergleichbarer Grösse in den letzten fünf Jahren
+    (zwingend)
+  - Nachweis der Einhaltung der Gleichbehandlung von Frau und Mann sowie der
+    Arbeitsschutzbestimmungen am Erfüllungsort (zwingend)
+  - Deutschsprachige Projektabwicklung und Dokumentation (zwingend)
+  - Erfahrung mit Siemens TIA Portal und Gebäudeleittechnik (erwünscht)
+
+  Erfüllungsort: Kanton Zürich
+  Eingabefrist Angebot: 20.11.2026, 12:00 Uhr
+  Vergütung: nach Aufwand gemäss Preisblatt, Einzelabrufe als Festpreis möglich
+
+first_seen_date: 2026-09-24
+last_seen_date: 2026-09-26
+publication_date: 2026-09-24
+application_deadline: 2026-11-20
+
+formal_tender: true
+
+status:
+  state: known
+  value: open
+  source_field: publication_status
+  extraction:
+    method: source_metadata
+
+location:
+  state: known
+  value:
+    country: CH
+    region: Zürich
+    original_text: Kanton Zürich
+  source_text: "Erfüllungsort: Kanton Zürich"
+  extraction:
+    method: rule_based
+
+# No workload is stated, and a framework agreement does not really have one. Left unknown
+# rather than inferred, so the workload hard filter cannot reject this.
+workload:
+  state: unknown
+  source_text: "Vergütung: nach Aufwand gemäss Preisblatt"
+  extraction:
+    method: rule_based
+
+commercial_arrangements:
+  state: known
+  value: [b2b, fixed_price, hourly_or_daily_rate]
+  source_text: nach Aufwand gemäss Preisblatt, Einzelabrufe als Festpreis möglich
+  extraction:
+    method: llm
+
+commercial_terms:
+  estimated_contract_value:
+    amount: "1200000"
+    currency: CHF
+  original_text: "Geschätzter Auftragswert über die Vertragsdauer: CHF 1'200'000 (exkl. MWST)"
+  b2b_allowed:
+    state: known
+    value: true
+    source_text: Dienstleistungsauftrag, Rahmenvertrag
+    extraction:
+      method: llm
+
+requirements:
+  - description: Valid ISO 9001 certificate, evidenced with the bid
+    category: qualification
+    subject: iso-9001
+    importance: mandatory
+    source_text: Gültiges Zertifikat ISO 9001 (zwingend, Nachweis mit Angebot)
+
+  - description: Valid ISO 27001 certificate, evidenced with the bid
+    category: qualification
+    subject: iso-27001
+    importance: mandatory
+    source_text: Gültiges Zertifikat ISO 27001 (zwingend, Nachweis mit Angebot)
+
+  - description: At least three comparable reference projects in the last five years
+    category: experience
+    importance: mandatory
+    source_text: >-
+      Mindestens drei Referenzprojekte vergleichbarer Grösse in den letzten fünf Jahren
+      (zwingend)
+
+  - description: >-
+      Evidence of compliance with equal treatment of women and men and with occupational
+      health and safety rules at the place of performance
+    category: eligibility
+    importance: mandatory
+    source_text: >-
+      Nachweis der Einhaltung der Gleichbehandlung von Frau und Mann sowie der
+      Arbeitsschutzbestimmungen am Erfüllungsort (zwingend)
+
+  - description: Project delivery and documentation in German
+    category: language
+    subject: de
+    importance: mandatory
+    source_text: Deutschsprachige Projektabwicklung und Dokumentation (zwingend)
+
+  - description: Siemens TIA Portal and building-services control experience
+    category: capability
+    subject: siemens-tia-portal
+    importance: preferred
+    source_text: Erfahrung mit Siemens TIA Portal und Gebäudeleittechnik (erwünscht)
+
+source_metadata:
+  publication_status: open
+  procedure: offenes Verfahren
+  cpv: "72000000"
+  submission_deadline_time: "12:00"

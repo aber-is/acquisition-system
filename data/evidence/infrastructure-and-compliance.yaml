@@ -1,0 +1,62 @@
+# Evidence: production infrastructure, the ISO management system, and documented
+# responsibilities.
+#
+# Who demonstrated what is stated by the profiles that cite these items, not here.
+
+- id: cloud-server-config
+  description: >-
+    The company's entire production infrastructure as code: two NixOS hosts (application
+    and dedicated monitoring) provisioned with disko, LUKS full-disk encryption with initrd
+    SSH unlock over IPv4 and IPv6, and impermanence. agenix with 19 encrypted secrets and
+    scripted rotation for B2 keys, the GitHub App key and mTLS client certificates;
+    YubiKey-backed SSH. Seafile with SMTP, 2FA, Elasticsearch and ClamAV scanning. Three
+    independent restic to Backblaze B2 backup sets with daily backups, weekly integrity
+    checks, exported metrics, Grafana alerts and a restore proven by rebuilding the
+    monitoring host from scratch. Grafana, Loki and Alloy shipped over mTLS. A weekly EICAR
+    canary that exercises the whole detection-to-alert path. Quarterly automated nixpkgs
+    updates with a flake build check, built to satisfy ISO 27001 control A.8.8. ~5,400 LOC
+    of Nix, 139 commits, sole author.
+  capabilities: [nix, nixos, infrastructure-as-code, monitoring, backups,
+                 secrets-management, information-security, ci-cd,
+                 infrastructure-and-security]
+  source: git history of aber-is/cloud-server-config, surveyed 2026-09-24
+  period:
+    start: 2024-11-01
+    end: 2026-08-31
+
+- id: management-system-docs-as-code
+  description: >-
+    An ISO 9001:2015 and ISO 27001:2022 management system built as a Git repository rather
+    than bought as compliance SaaS: policies, procedures, Statement of Applicability, risk
+    and opportunity register, asset register, supplier register, legal register and decision
+    log as Markdown under PR-based document change control, with Nix-reproducible PDF
+    generation and a GitHub Actions workflow publishing the evidence pack to Seafile via the
+    library API on the self-hosted runner.
+  capabilities: [iso-9001, iso-27001, information-security, ci-cd, iso-management-systems]
+  source: git history of aber-is/managment-system, surveyed 2026-09-24
+  period:
+    start: 2026-05-01
+
+- id: iso-27001-certification-programme
+  description: >-
+    A Mercedes-Benz AG email of 04/07/2025 made a valid ISO 27001 certificate a condition of
+    continuing as a supplier. The company built the technical response — infrastructure,
+    encrypted secrets, tested backups, monitoring and automated patching — alongside the
+    management system itself. Stage 1 audit 27/05/2026, Stage 2 audit 26/08/2026,
+    certification recommended with zero major nonconformities, outcome and follow-up actions
+    recorded 14/09/2026.
+  capabilities: [iso-27001, information-security, iso-management-systems,
+                 infrastructure-and-security]
+  source: ISO management-system records and audit reports
+  period:
+    start: 2025-07-04
+    end: 2026-09-14
+
+- id: technical-and-it-lead-role
+  description: >-
+    Documented responsibility, per the company's own ISO management-system records: Top
+    management (jointly with the director) and Technical and IT Lead, owning servers,
+    endpoints, cloud services, access control, backups, monitoring, security controls and
+    technical evidence.
+  capabilities: [technical-leadership, information-security]
+  source: roles, responsibilities and competence register (ISO management system)

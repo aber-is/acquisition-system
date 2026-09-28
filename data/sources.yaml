@@ -1,0 +1,28 @@
+# Sources the pipeline is intended to cover first. Validates as list[Source].
+- id: freelancermap
+  name: freelancermap
+  kind: job_board
+  url: https://www.freelancermap.ch/
+  notes: Highest volume of Swiss freelance listings; workload and rate fields are structured.
+
+- id: prostaff
+  name: PROSTAFF
+  kind: agency
+  notes: Agency listings; client is usually undisclosed and workload is often only prose.
+
+- id: ghr
+  name: GHR
+  kind: agency
+  notes: Agency listings, mainly contract and temp-to-perm.
+
+- id: linkedin
+  name: LinkedIn
+  kind: professional_network
+  url: https://www.linkedin.com/
+  notes: Mixed employment and contract postings; contract type frequently unstated.
+
+- id: simap
+  name: SIMAP
+  kind: tender_platform
+  url: https://www.simap.ch/
+  notes: Swiss public procurement. Formal tenders with explicit eligibility requirements.

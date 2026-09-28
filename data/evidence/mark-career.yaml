@@ -1,0 +1,101 @@
+# Evidence: Mark Aber's career before and alongside Aber Industrial Solutions.
+#
+# Derived from context/mark-aber-work-summary.md. The pre-1996 items are retained because
+# they are the origin of the HMI/SCADA lineage the company still works in, not because
+# every technology named in them is a current capability — see the profile for what is
+# actually claimed.
+#
+# Who demonstrated what is stated by the profiles that cite these items, not here.
+
+- id: rastatt-intouch-commissioning
+  description: >-
+    Commissioning and defect resolution on the Mercedes-Benz Rastatt InTouch installation,
+    engaged initially through Dürr to complete and stabilise the systems before plant
+    acceptance. The installation had accumulated more than 2,000 documented software issues;
+    the backlog was worked through, the HMI systems corrected, and sign-off achieved. The
+    engagement led to a direct working relationship with Mercedes-Benz and a much broader
+    role across the plant and its supplier network. From the late 1990s this extended to
+    plant-wide commissioning, supplier support, HMI quality assurance, Y2K compliance and
+    operational support across Body Shop, Paint Shop and Assembly.
+  capabilities: [wonderware-intouch, commissioning-and-acceptance, hmi-engineering,
+                 automotive-manufacturing]
+  source: work summary, sections 6.1 and 6.2
+  period:
+    description: Late 1990s onward
+
+- id: wonderware-invensys-vendor-coordination
+  description: >-
+    Direct negotiation with Wonderware/Invensys leadership in Germany and at the company's
+    US headquarters, representing Mercedes-Benz and system-integrator requirements where
+    product limitations blocked the emerging plant standard and could not be solved inside
+    the plant project. The work required translating between production requirements, system
+    architecture, engineering constraints and software-vendor capabilities.
+  capabilities: [vendor-coordination, wonderware-intouch, scada-architecture]
+  source: work summary, section 6.5
+
+- id: aber-industrial-solutions-leadership
+  description: >-
+    Founding and running Aber Industrial Solutions from 1996: company strategy, programme
+    planning, customer relationships, commercial proposals and negotiation, financial and
+    resource planning, supplier coordination, quality management and long-term customer
+    development, combined with senior technical delivery rather than separated from it. At
+    periods of high demand the business ran a mixed team of permanent employees and
+    freelancers. Work has reached more than 100 customer organisations across four decades.
+  capabilities: [programme-leadership, commercial-negotiation, supplier-qa-coordination]
+  source: work summary, sections 5 and 8
+  period:
+    description: 1996 to present
+
+- id: early-hmi-scada-career
+  description: >-
+    The HMI/SCADA lineage before Aber Industrial Solutions. At AFE Technologies (1987-1989,
+    Sutton Coldfield) development of the proprietary IC2000 and IC2X HMI/SCADA products in C,
+    C++ and assembly, including multilingual functionality, which brought direct contact with
+    French and German customers. At INTEC GmbH (1989-1993, Stuttgart) delivery and
+    commissioning of SCADA/HMI systems for chemical production, food and beverage and
+    mechanical engineering customers, plus SCADA sales and customer support — including work
+    with early releases of Wonderware InTouch and involvement in its introduction to the
+    German market. At AST GmbH (1993-1995, Metzingen) a dedicated HMI/SCADA specialist role
+    covering InTouch, Siemens WinCC, Siemens HMI/OP systems and PLC-to-HMI integration for
+    automotive press works and the chemical and petrochemical industries.
+  capabilities: [wonderware-intouch, plc-integration, commissioning-and-acceptance, chemicals]
+  source: work summary, sections 4.2, 4.3 and 4.4
+  period:
+    start: 1987-01-01
+    end: 1995-12-31
+
+- id: british-timken-vibration-analysis
+  description: >-
+    Sponsored industrial placement and subsequent role as software and hardware engineer at
+    British Timken, Northampton, working on bearing-vibration analysis systems: software and
+    hardware development, Intel-based prototypes, data acquisition, control-system wiring and
+    integration, physical-device interfaces and diagnostic applications, in PL/M-86, LISP,
+    Visual Basic and assembly. Selected for company sponsorship from a large applicant pool
+    and worked at the manufacturing site from shop-floor operations through to engineering
+    project work. This combination of software, hardware, process data and visualisation is
+    the origin of the later HMI and SCADA specialisation.
+  capabilities: [data-acquisition, industrial-automation]
+  source: work summary, sections 3.1 and 4.1
+  period:
+    start: 1983-01-01
+    end: 1987-12-31
+
+- id: guenter-role-at-aber
+  description: >-
+    Günter Bernhart's areas of work and expertise at Aber Industrial Solutions, joined
+    01/11/2003. Areas of work: technical documentation of engineering processes from PLC
+    through to SCADA; quality assurance of those same engineering processes; and SCADA
+    programming. Stated expertise: PLC and visualisation structures, Siemens PLC concepts
+    and structure, HMI concepts, and an understanding of process technology, conveyor
+    systems, mechanical systems and the automotive industry.
+
+    This item is testimony, not a project record. It is a statement by the company's
+    managing director rather than something traceable to repositories, customer documents or
+    audit records, and it should be read as weaker evidence than the project items in this
+    library. Replace or supplement it if project records, customer documentation or
+    attributable work become available.
+  capabilities: [technical-documentation, engineering-quality-assurance, scada-programming,
+                 siemens-plc, plc-integration, hmi-engineering, automotive-manufacturing]
+  source: statement by Mark Aber, managing director, relayed 2026-09-28
+  period:
+    start: 2003-11-01

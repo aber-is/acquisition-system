@@ -1,0 +1,113 @@
+# SYNTHETIC EXAMPLE — not a real posting. This is the important one: a vague agency
+# listing where most hard-filter inputs are unknown or contradictory. It exercises
+# conflicting normalized values, unknown values that must not read as rejections, and a
+# listing that has simply stopped appearing without being declared closed.
+#
+# Replace with real PROSTAFF / GHR listings as soon as any are collected.
+#
+# The extraction methods say how each value WOULD be derived by the pipeline, since that is
+# what the example is for: source_metadata for a structured listing field, rule_based for a
+# deterministic text rule, llm where the wording genuinely needs interpreting. No extractor
+# is named and no confidence given, because no normalizer exists yet to name or report one.
+
+id: prostaff-it-projektleiter-raum-zuerich
+opportunity_type: individual_opportunity
+source_id: prostaff
+source_url: https://www.prostaff.example/jobs/it-projektleiter-000000
+original_text: |
+  IT-Projektleiter (m/w/d)
+
+  Unser Kunde, ein etabliertes Unternehmen im Raum Zürich, sucht per sofort einen
+  IT-Projektleiter. Vollzeit. Ein Teil der Tätigkeit kann remote erbracht werden.
+
+  Wir freuen uns auf Ihre Bewerbung.
+
+  Pensum: 80-100%
+  Anstellungsart: nach Vereinbarung
+title: IT-Projektleiter (m/w/d)
+
+first_seen_date: 2026-08-14
+last_seen_date: 2026-09-11
+
+# The listing has not been seen for two weeks, but the source never said it closed, and
+# there is no deadline. Disappearing is an observation, not a status.
+status:
+  state: unknown
+  source_text: Wir freuen uns auf Ihre Bewerbung.
+  extraction:
+    method: rule_based
+    notes: Not seen since 2026-09-11. No closure statement and no deadline published.
+
+# "Raum Zürich" plus unspecified remote work. The region is a real place but the extent is
+# not determinable, so the text is retained and nothing narrower is claimed.
+location:
+  state: known
+  value:
+    country: CH
+    original_text: Raum Zürich
+  source_text: ein etabliertes Unternehmen im Raum Zürich
+  extraction:
+    method: rule_based
+
+# Hybrid is stated but not quantified. The mode is known; the split is not, and no share is
+# invented from "ein Teil".
+work_location:
+  state: known
+  value:
+    mode: hybrid
+    original_text: Ein Teil der Tätigkeit kann remote erbracht werden.
+  source_text: Ein Teil der Tätigkeit kann remote erbracht werden.
+  extraction:
+    method: llm
+
+# The prose says "Vollzeit" while the structured field says 80-100%. Both came from the
+# source and they do not agree, so neither is adopted. "Vollzeit" normalizes to 100% under
+# the workload rule in docs/normalization-rules.md, which is what makes the two
+# candidates comparable — but the conflict itself must not be silently resolved, or the
+# opportunity would be rejected against a part-time profile on contradictory data.
+workload:
+  state: conflicting
+  candidates:
+    - minimum_percentage: 100
+      maximum_percentage: 100
+      original_text: Vollzeit
+    - minimum_percentage: 80
+      maximum_percentage: 100
+      original_text: 80-100%
+  source_text: "Vollzeit. ... Pensum: 80-100%"
+  extraction:
+    method: rule_based
+    notes: >-
+      Prose and the structured Pensum field disagree. The candidates were obtained
+      differently — "Vollzeit" by the documented workload rule, 80-100% straight from the
+      pensum field — but provenance is recorded per value rather than per candidate, so the
+      method names the more derived of the two.
+
+# "Anstellungsart: nach Vereinbarung" does not say whether B2B is possible. Unknown, so
+# no b2b-related rejection may be recorded against it.
+commercial_arrangements:
+  state: unknown
+  source_text: "Anstellungsart: nach Vereinbarung"
+  extraction:
+    method: rule_based
+
+commercial_terms:
+  b2b_allowed:
+    state: unknown
+    source_text: "Anstellungsart: nach Vereinbarung"
+    extraction:
+      method: rule_based
+
+# The only requirement worth recording is the role itself, and the posting never marks
+# anything as mandatory. Nothing here may cause a deterministic rejection.
+requirements:
+  - description: IT project management
+    category: capability
+    subject: it-project-management
+    importance: unknown
+    source_text: sucht per sofort einen IT-Projektleiter
+
+source_metadata:
+  pensum: 80-100%
+  anstellungsart: nach Vereinbarung
+  agency_reference: PS-000000

@@ -1,0 +1,149 @@
+# SYNTHETIC EXAMPLE — not a real posting. Written to exercise the model against a
+# well-structured job-board listing: explicit workload, published rate, explicit B2B,
+# a mandatory language requirement and quantified travel.
+#
+# Replace with real freelancermap postings as soon as any are collected.
+#
+# The extraction methods say how each value WOULD be derived by the pipeline, since that is
+# what the example is for: source_metadata for a structured listing field, rule_based for a
+# deterministic text rule, llm where the wording genuinely needs interpreting. No extractor
+# is named and no confidence given, because no normalizer exists yet to name or report one.
+
+id: freelancermap-scada-engineer-zurich
+opportunity_type: individual_opportunity
+title: Freelance SCADA/HMI Engineer (Siemens TIA Portal)
+client: Undisclosed industrial client
+source_id: freelancermap
+source_url: https://www.freelancermap.ch/projekt/000000-scada-hmi-engineer
+original_text: |
+  Für einen Industriekunden im Raum Zürich suchen wir einen erfahrenen
+  SCADA/HMI-Engineer.
+
+  Aufgaben:
+  - Engineering und Standardisierung von HMI-Applikationen
+  - Anbindung von Siemens-Steuerungen (TIA Portal, S7)
+  - Migration bestehender Visualisierungen
+
+  Anforderungen:
+  - Mehrjährige Erfahrung im SCADA/HMI-Umfeld zwingend
+  - Siemens TIA Portal zwingend erforderlich
+  - Deutsch verhandlungssicher (zwingend), Englisch von Vorteil
+  - Erfahrung mit Wonderware InTouch von Vorteil
+
+  Pensum: 60-80%
+  Einsatzort: Zürich, 2 Tage/Woche vor Ort, Rest remote möglich
+  Reisebereitschaft: ca. 20% zu weiteren Standorten in der Schweiz
+  Stundensatz: CHF 110-130
+  Abrechnung über Firma (B2B) möglich
+  Start: ab sofort, Bewerbungsfrist 31.10.2026
+
+first_seen_date: 2026-09-22
+last_seen_date: 2026-09-26
+publication_date: 2026-09-19
+application_deadline: 2026-10-31
+
+status:
+  state: known
+  value: open
+  source_field: listing_status
+  extraction:
+    method: source_metadata
+
+location:
+  state: known
+  value:
+    country: CH
+    city: Zürich
+    original_text: Zürich
+  source_text: "Einsatzort: Zürich, 2 Tage/Woche vor Ort, Rest remote möglich"
+  extraction:
+    method: rule_based
+
+work_location:
+  state: known
+  value:
+    mode: hybrid
+    onsite_days_per_week: 2
+    original_text: "Zürich, 2 Tage/Woche vor Ort, Rest remote möglich"
+  source_text: "Einsatzort: Zürich, 2 Tage/Woche vor Ort, Rest remote möglich"
+  extraction:
+    method: rule_based
+
+workload:
+  state: known
+  value:
+    minimum_percentage: 60
+    maximum_percentage: 80
+    original_text: 60-80%
+  source_text: "Pensum: 60-80%"
+  extraction:
+    method: rule_based
+
+commercial_arrangements:
+  state: known
+  value: [b2b, hourly_or_daily_rate]
+  # Two spans, because the two values come from different lines: the B2B clause, and the
+  # published hourly rate that makes this a rate-based engagement.
+  source_text: "Stundensatz: CHF 110-130 / Abrechnung über Firma (B2B) möglich"
+  extraction:
+    method: rule_based
+
+commercial_terms:
+  rate:
+    unit: hour
+    minimum:
+      amount: "110"
+      currency: CHF
+    maximum:
+      amount: "130"
+      currency: CHF
+    original_text: "Stundensatz: CHF 110-130"
+  b2b_allowed:
+    state: known
+    value: true
+    source_text: Abrechnung über Firma (B2B) möglich
+    extraction:
+      method: rule_based
+
+travel:
+  description: ca. 20% zu weiteren Standorten in der Schweiz
+  share_percentage: 20
+  destinations:
+    - country: CH
+      original_text: weitere Standorte in der Schweiz
+
+requirements:
+  - description: Several years of experience in SCADA/HMI engineering
+    category: experience
+    subject: hmi-engineering
+    importance: mandatory
+    source_text: Mehrjährige Erfahrung im SCADA/HMI-Umfeld zwingend
+
+  - description: Siemens TIA Portal
+    category: capability
+    subject: siemens-tia-portal
+    importance: mandatory
+    source_text: Siemens TIA Portal zwingend erforderlich
+
+  - description: German at negotiation level
+    category: language
+    subject: de
+    importance: mandatory
+    source_text: Deutsch verhandlungssicher (zwingend)
+
+  - description: English
+    category: language
+    subject: en
+    importance: preferred
+    source_text: Englisch von Vorteil
+
+  - description: Wonderware InTouch experience
+    category: capability
+    subject: wonderware-intouch
+    importance: preferred
+    source_text: Erfahrung mit Wonderware InTouch von Vorteil
+
+source_metadata:
+  listing_status: open
+  category: SCADA / Automatisierung
+  remote_share: "60%"

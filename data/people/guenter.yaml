@@ -1,0 +1,90 @@
+# Person profile: Günter Bernhart
+#
+# Deliberately thinner than the others. Every claim rests on one evidence item — a statement
+# by the managing director rather than a project record. That is weaker than the git history
+# behind Salomon's profile or the programme record behind Mark's, and the evidence item says
+# so.
+#
+# Date of birth and street address were supplied and are deliberately not recorded: both are
+# personal data with no bearing on matching, and this repository has no handling for them.
+# The postal code is kept because geography does use it.
+
+id: guenter
+name: Günter Bernhart
+
+location:
+  country: DE
+  postal_code: "76744"
+
+# TODO(salomon): availability, workload, commercial expectations and eligibility are all
+# unknown.
+availability:
+  as_of: 2026-09-28
+
+# Neither level is a CEFR assessment: native, and some working ability short of being able
+# to deliver in the language.
+languages:
+  - language: de
+    level: native
+  - language: en
+    level: intermediate
+
+preferred_role_types: []
+excluded_role_types: []
+
+capabilities:
+  - subject: technical-documentation
+    label: Technical documentation of engineering processes
+    evidence:
+      - evidence_id: guenter-role-at-aber
+        note: Documents engineering processes end to end, from PLC through to SCADA.
+
+  - subject: engineering-quality-assurance
+    label: QA of engineering processes
+    evidence:
+      - evidence_id: guenter-role-at-aber
+        note: >-
+          Quality assurance of the same PLC-to-SCADA engineering processes he documents.
+
+  - subject: scada-programming
+    evidence:
+      - evidence_id: guenter-role-at-aber
+        note: SCADA programming as a core area of work.
+
+  - subject: plc-integration
+    label: PLC / HMI / SCADA integration
+    evidence:
+      - evidence_id: guenter-role-at-aber
+        note: >-
+          Works across the PLC-to-SCADA boundary, with stated expertise in PLC and
+          visualisation structures.
+
+  - subject: siemens-plc
+    label: Siemens PLC
+    evidence:
+      - evidence_id: guenter-role-at-aber
+        note: Stated expertise in Siemens PLC concepts and structure.
+
+  - subject: hmi-engineering
+    evidence:
+      - evidence_id: guenter-role-at-aber
+        note: Stated expertise in HMI concepts and visualisation structures.
+
+domains:
+  - subject: automotive-manufacturing
+    label: Automotive manufacturing
+    evidence:
+      - evidence_id: guenter-role-at-aber
+        note: Stated understanding of the automotive industry.
+
+  - subject: process-technology
+    evidence:
+      - evidence_id: guenter-role-at-aber
+        note: Stated understanding of process technology.
+
+  - subject: conveyor-systems
+    evidence:
+      - evidence_id: guenter-role-at-aber
+        note: >-
+          Stated understanding of conveyor and mechanical systems — the plant equipment the
+          control and visualisation layers sit on top of.

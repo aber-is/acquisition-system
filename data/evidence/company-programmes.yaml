@@ -1,0 +1,114 @@
+# Evidence: customer programmes and engagements, from context/company-work-summary.md.
+#
+# Most of this predates the current software estate and the current technical staff. Who
+# demonstrated what is stated by the profiles that cite these items, not here.
+
+- id: integra-scada-standard-rastatt
+  description: >-
+    Contribution to the new HMI and SCADA architecture at the Mercedes-Benz Rastatt plant,
+    where the BSR standard on Siemens S5 and InTouch had reached the practical limit of
+    available tags. Work covered HMI capacity optimisation (tag consolidation, generic
+    indirectly addressed windows, structure reuse), a reusable template system defining
+    operating logic, addressing, permissions, visualisation and interaction rules, a
+    structured authorisation concept driven by an activity-code matrix, migration of manual
+    InTouch alarms to a centrally managed alarm system, an InTouch wizard generating
+    functional-group mimics with automatic addressing and layout variants, a central
+    multi-application management concept for several hundred PLCs with limited peer-to-peer
+    connection capacity, integration of the Dürr APT HMI in the Body Shop, full technical
+    documentation, staged testing through to production trial operation, and operator
+    training. The resulting Integra standard became the Mercedes-Benz corporate standard.
+    The programme established a modular, scalable and maintainable SCADA architecture able
+    to support continued plant expansion, and the work formed part of the technical
+    foundation for later Smart Factory and Digital Factory initiatives, providing a common
+    framework for subsequent systems, suppliers and sites.
+  capabilities: [scada-architecture, hmi-standardisation, wonderware-intouch,
+                 alarm-management, engineering-automation, plc-integration,
+                 commissioning-and-acceptance, operator-training, automotive-manufacturing,
+                 industrial-digitalisation, legacy-system-migration]
+  source: company work summary, section 2
+  url: https://aber-is.de/
+
+- id: intouch-window-migration
+  description: >-
+    Migration of approximately 1,000 existing InTouch windows to the Integra standard, with
+    structure, logic and visualisation adapted while old and new systems ran in parallel and
+    continuity of production and alarm visibility was maintained.
+  capabilities: [legacy-system-migration, hmi-standardisation, wonderware-intouch]
+  source: company work summary, section 2
+
+- id: scada-quality-assurance-tool
+  description: >-
+    A QA/QC analysis tool developed for Mercedes-Benz AG that embeds formal compliance rules,
+    analyses PLC, HMI and SCADA project data, identifies non-conformities, links findings to
+    the affected components, presents results in a structured tree view and generates
+    non-conformity reports. Also covered technical quality assurance during integration of
+    new plant areas and supplier modifications, including supplier check-in/check-out
+    coordination and controlled integration of approved changes. Automated checks enabled
+    deviations to be detected earlier in the project lifecycle, improving supplier
+    accountability, reducing integration risk, accelerating corrective actions and
+    contributing to more consistent behaviour across production-critical automation systems.
+  capabilities: [quality-assurance-tooling, supplier-qa-coordination]
+  source: company work summary, sections 2 and 3.2
+
+- id: duerr-high-bay-storage-hmi
+  description: >-
+    An HMI for a high-bay vehicle-storage system commissioned by Dürr Systems AG, implemented
+    on InTouch with a backend-heavy architecture: processing and control logic moved into
+    scripting and frontend tags primarily indirectly addressed, reducing static tag complexity
+    and separating presentation from processing. The HMI remained stable despite the scale
+    and graphical complexity of the installation, and its modular architecture allowed the
+    physical storage system to expand without fundamental redesign, while diagnostics and
+    structured data handling improved operational transparency and maintainability.
+  capabilities: [scada-architecture, wonderware-intouch, automotive-manufacturing]
+  source: company work summary, section 3.4
+
+- id: integra-multi-site-rollout
+  description: >-
+    Implementation and expansion of Integra-based SCADA systems across multiple sites for
+    INEOS AG and Mercedes-Benz AG, covering production environments in Hambach and Kecskemét
+    and building-technology systems for more than 70 buildings in Sindelfingen, plus KPI
+    templates, SCADA compliance-analysis tools, log-analysis tools, HMI engineering
+    automation, PLC-to-SCADA information processing and support for management-information
+    systems. Over the life of the programme, SCADA and related work reached Rastatt,
+    Sindelfingen, Bremen, Wörth, Hambach, Kecskemét in Hungary and East London in South
+    Africa, ranging from commissioning and QA to building-technology SCADA and standard
+    rollout. The work helped extend a consistent SCADA architecture across different
+    production and building-technology environments, and the reusable KPI templates and
+    engineering tools reduced manual effort, improved system transparency and supported
+    structured implementation of the evolving corporate standard.
+  capabilities: [integra-iportal, plc-integration, manufacturing-information-systems,
+                 building-services-tga, chemicals, siemens-plc]
+  source: company work summary, section 3.5
+
+- id: resource-and-fault-management
+  description: >-
+    A resource and fault-management system for the Rastatt maintenance organisation combining
+    live plant fault data with workforce coordination: mobile access to live fault
+    information, direct task assignment, on-site documentation with photos, videos and
+    annotations, central resource planning, staff availability and activity tracking, team
+    dashboards and statistical fault analysis. A desktop application supported supervisors
+    while a configurable mobile application served maintenance staff at the fault location.
+    The solution reduced response times, improved documentation quality and created a central
+    view of open work and personnel activity. Recurring faults and problematic plant areas
+    could be analysed statistically, supporting targeted improvement measures and more
+    data-driven maintenance processes.
+  capabilities: [manufacturing-information-systems, apache-solr, automotive-manufacturing]
+  source: company work summary, section 3.1
+
+- id: hmi-engineering-toolsets
+  description: >-
+    Engineering tools developed for Mercedes-Benz that convert proprietary elements embedded
+    in SVG graphics directly into the customer's HMI file format, so that engineers can work
+    in established SVG editors while still producing output compliant with the corporate
+    standard. The toolchain automates HMI file generation, graphical conversion, template
+    configuration, Tag Trending configuration and project parameterisation, with structured
+    spreadsheet templates defining graphics, templates and data interfaces consistently.
+    Addressed the problem that HMI engineering under strict corporate standards was
+    time-consuming for large process overviews, building plans and complex graphics, and that
+    trend configuration and standard-specific file generation involved multiple error-prone
+    manual steps. The toolsets reduced development time, lowered configuration error rates,
+    improved visual consistency and made engineering repeatable and less dependent on manual
+    work inside the proprietary HMI editor.
+  capabilities: [engineering-automation, scada-engineering-automation, hmi-engineering,
+                 industrial-digitalisation, integra-iportal, automotive-manufacturing]
+  source: company work summary, section 3.3

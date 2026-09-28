@@ -1,0 +1,128 @@
+# Evidence: software products and engineering tools built in-house.
+#
+# Derived from context/salomon-work-summary.md, itself derived from the git history of the
+# aber-is organisation (surveyed 2026-09-24).
+#
+# Who demonstrated what is stated by the profiles that cite these items, not here.
+
+- id: tfa-tga-form-automation
+  description: >-
+    TGA Form Automation: a Go CLI generating complete Integra iPortal SCADA projects for
+    building services from a single 51-column Excel overview workbook. Emits HMI forms,
+    SVG schematics, project files and customer quotations, and round-trips a project back
+    into a workbook. Handles symbolic (TIA) and classic absolute (STEP 7) PLC addressing
+    per PLC. ~7,100 LOC Go, six test suites, GitHub Actions CI, Nix flake pinning the
+    toolchain and the fonts needed for correct text metrics. 407 commits. Sampled by the
+    ISO auditor as the evidence of controlled software design.
+  capabilities: [go, nix, ci-cd, integra-iportal, siemens-tia-portal, siemens-step7,
+                 scada-engineering-automation, plc-addressing, hmi-engineering,
+                 engineering-automation, building-services-tga]
+  source: git history of aber-is/tfa, surveyed 2026-09-24
+  period:
+    start: 2021-09-01
+    description: 2021-09 to 2026-09, continuous
+
+- id: svg-to-dfm-toolchain
+  description: >-
+    A layered stack of published Go modules converting SVG schematics into Integra iPortal
+    HMI forms: dfm (a Delphi DFM parser-printer extended with in-memory mutation, event
+    tracking and OR-based queries), svg, idf (the iPortal container format) and svg2dfm.
+    svg2dfm required implementing font metrics and text layout from scratch — per-glyph,
+    style- and weight-aware measurement calibrated against Inkscape — plus a hand-written
+    SVG path lexer tolerant of real exporter quirks. Now at v2.
+  capabilities: [go, reverse-engineering, scada-engineering-automation, integra-iportal]
+  source: git history of aber-is/{dfm,svg,idf,svg2dfm}, surveyed 2026-09-24
+
+- id: integra-validation-tool
+  description: >-
+    A QA tool that statically analyses customer PLC and HMI projects and reports quality
+    findings. Reads and cross-references Siemens STEP 7 AWL, Siemens TIA Portal, Integra
+    DesignerPro and Integra iPortal projects plus Excel device and KPI tables, under a
+    pluggable rule engine that CLI and desktop UI both run against the same per-PLC
+    contexts. C# / .NET 8, Avalonia, ~24,400 LOC, 20 test projects including headless UI
+    tests, Windows release pipeline. Includes a commit-hash-keyed rule-result cache with
+    characterization tests written to pin the staleness risk before changing it, and a
+    refactoring campaign preceded by a full-project regression baseline. 181 commits, sole
+    author. Positive customer feedback logged 26/05/2026 and cited in the ISO audit.
+  capabilities: [csharp, static-analysis, siemens-step7, siemens-tia-portal, siemens-plc,
+                 integra-iportal, ci-cd, industrial-automation, quality-assurance-tooling]
+  source: git history of aber-is/integra-validation-tool, surveyed 2026-09-24
+  period:
+    start: 2025-11-01
+
+- id: isa-isisave-analysis
+  description: >-
+    ISA (isiSave Analysis), a four-component product designed and built end to end for
+    analysing isiSave SCADA archiving logs: isa-cli (Python, imports and indexes isiSave and
+    AMS logs into SQLite with PLC/user extraction and expiry-based deletion), isa-server
+    (TypeScript/Node.js REST API and static web app, YAML config, CSV export, and a
+    parameterised search/filter SQL fix closing an injection hole), isa-client (React +
+    TypeScript + Vite filterable data table) and isa-report (Go Windows report generator).
+    Ships as a packaged Windows release built by GitHub Actions with bilingual DE/EN
+    installation documentation. 213 commits, sole author.
+  capabilities: [python, typescript, go, ci-cd, information-security]
+  source: git history of aber-is/isa-*, surveyed 2026-09-24
+  period:
+    start: 2023-04-01
+    end: 2026-04-30
+
+- id: mira-mobile-maintenance
+  description: >-
+    MIRA, an iOS mobile-maintenance system for Mercedes-Benz plants (resource manager,
+    documented fault reports, digital shift handover, protocols, knowledge base), maintained
+    and shipped from v3.5.x to v3.6.1 — ~34k LOC of Swift across 181 source files. Includes
+    migrating off the third-party "BASE PUSH" vendor SDK onto an in-house replacement,
+    coordinated across the iOS app, the C++ server and a new Go service: mira-push, an APNS
+    server with device registration, bundle-ID validation, SQLite with embedded migrations
+    and a Basic-Auth REST API. rsm-server (C++ / cpprestsdk) serves MIRA over HTTP/JSON and
+    the legacy Windows clients over a proprietary binary TCP protocol against a shared SQL
+    database. ~170 commits across the stack.
+  capabilities: [swift, go, cpp, automotive-manufacturing,
+                 manufacturing-information-systems]
+  source: git history of aber-is/{mira,mira-push,mira-hub,rsm-*}, surveyed 2026-09-24
+  period:
+    start: 2020-06-01
+
+- id: mis-manufacturing-information-system
+  description: >-
+    MIS, a search-driven fault and stoppage information system for the plant floor, built end
+    to end: mis-solr (Apache Solr 8.11 configsets with security.json and Windows service
+    install), mis-sync (Python, MS SQL Server to Solr over ODBC), mis-flask (the production
+    front end — fuzzy search with highlighting, alarm sorting, an error-tree view, mobile-first
+    responsive UI, later refactored into blueprints) and an earlier SvelteKit client. Deployed
+    under severe constraints: Windows Server 2012 R2 with a locked-down registry and no PyPI
+    access, solved with embedded Python, transplanted site-packages and NSSM-wrapped services,
+    documented so it could be repeated. 201 commits, sole author.
+  capabilities: [python, apache-solr, automotive-manufacturing]
+  source: git history of aber-is/mis-*, surveyed 2026-09-24
+  period:
+    start: 2022-04-01
+    end: 2025-10-31
+
+- id: iportal-project-estate
+  description: >-
+    The generated Integra iPortal TGA project estate: 72 version-controlled building projects
+    (66 Sindelfingen, 5 Hamburg, plus a migration repo) covering buildings B3 through B740 and
+    their sub-areas, holding the .idf/.ids form files and SVG schematics, and doubling as the
+    regression corpus for the toolchain — regenerating a building and diffing the result is how
+    toolchain changes are verified. A standardisation cleanup was run across all 72 at once in
+    February 2026. Plus iportal-templates, the reusable HMI template library: configurable
+    decimal places, editable real values writing setpoints back to the PLC in both TIA symbolic
+    and classic absolute addressing, limit displays, 8-value tables, and a semicolon-separated
+    authorisation-class system that greys out controls for unauthorised users with dynamic
+    updates when the user's level changes.
+  capabilities: [integra-iportal, hmi-engineering, plc-addressing,
+                 scada-engineering-automation, building-services-tga]
+  source: git history of aber-is/iportal-*, surveyed 2026-09-24
+
+- id: dat2xlsx-plc-operand-extraction
+  description: >-
+    A C tool extracting PLC operands from Siemens DAT files into XLSX, written against
+    libxlsxwriter, pcre2, libcsv and later xlsxio. Infers block size from the header and
+    handles CP1252 to UTF-8 conversion, CR line endings in AWL files, filter gaps, duplicate
+    suppression and TIA PLCs. CMake build, Nix flake, fixture-based regression test and CI.
+    49 commits.
+  capabilities: [c, siemens-step7, industrial-automation]
+  source: git history of aber-is/dat2xlsx, surveyed 2026-09-24
+  period:
+    start: 2022-01-01

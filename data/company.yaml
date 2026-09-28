@@ -1,0 +1,503 @@
+# Company profile: Aber Industrial Solutions (the delivery organisation)
+#
+# Drawn from context/company-work-summary.md and the ISO management system under
+# context/managment-system/. Capabilities cite the evidence library under data/evidence/.
+#
+id: aber-industrial-solutions
+name: Aber Industrial Solutions
+website: https://aber-is.de/
+
+# Two legal entities trade as Aber Industrial Solutions. The capabilities, evidence and
+# project references below belong to the organisation, not to either entity, because the
+# same people do the work whichever one contracts. Which entity invoices is usually a
+# fiscal decision — but not always: jurisdiction and trading history can decide whether a
+# buyer may award to one at all.
+contracting_entities:
+  - id: mark-aber-freiberuflich
+    legal_name: Mark Aber
+    trading_name: Aber Industrial Solutions
+    legal_form: sole_trader
+    country: DE
+    tax_number: DE178994004
+    notes: >-
+      Freiberuflich. The original business, trading since 1996, and therefore the entity
+      that delivered the long-running Mercedes-Benz, Dürr and INEOS programmes. A sole
+      trader has no commercial register number.
+    location:
+      country: DE
+      region: Baden-Württemberg
+      city: Gernsbach
+      postal_code: "76593"
+      original_text: Kelterbergstr. 5, Gernsbach, Baden-Württemberg, 76593, Germany
+    established:
+      description: Trading since 1996
+
+  - id: aber-industrial-solutions-ltd
+    legal_name: Aber Industrial Solutions Ltd
+    legal_form: limited_company
+    country: GB
+    registration_number: "14205293"
+    tax_number: GB420345831
+    location:
+      country: GB
+      region: East Sussex
+      city: Crowborough
+      postal_code: TN6 1XD
+      original_text: Foresters, Friars Gate, Crowborough, East Sussex, TN6 1XD, United Kingdom
+    established:
+      description: Trading since 2022
+
+geographic_constraints:
+  countries: [GB, DE, CH]
+  accepted_work_location_modes: [remote, hybrid, onsite]
+  notes: >-
+    Customer-site travel to automotive plants (Sindelfingen, Hamburg, Rastatt) is routine.
+    The ISO certificates cover two locations: the registered office in Crowborough and a
+    German location in Gernsbach, Baden-Württemberg, so certified delivery from Germany can
+    be evidenced as well as from the UK.
+
+supported_commercial_arrangements: [b2b, fixed_price, hourly_or_daily_rate, subcontractor]
+
+# Confirmed as having no minimum, rather than not yet asked. Commercial fit for the company
+# therefore rests on the published terms alone until a floor is set.
+commercial_constraints:
+  notes: No minimum engagement value or rate is set.
+
+employee_ids: [salomon, mark, guenter]
+
+# Professional rather than a CEFR level: an organisation has no CEFR assessment, and the
+# claim being made is that projects and documentation can be delivered in both languages.
+languages:
+  - language: de
+    level: professional
+    evidence:
+      - evidence_id: isa-isisave-analysis
+        note: Bilingual DE/EN installation documentation delivered with the product.
+      - evidence_id: integra-validation-tool
+        note: German and English localisation of the delivered application.
+  - language: en
+    level: professional
+    evidence:
+      - evidence_id: isa-isisave-analysis
+        note: Bilingual DE/EN installation documentation delivered with the product.
+
+credentials:
+  # Scope wording on each credential is verbatim from its own certificate, which is what a
+  # bid must quote. The two differ slightly; do not use one for the other.
+  - id: iso-9001-2015
+    kind: certification
+    name: ISO 9001:2015
+    issuer: British Assessment Bureau Limited t/a Amtivo
+    reference: "272711"
+    entity_ids: [mark-aber-freiberuflich, aber-industrial-solutions-ltd]
+    status: active
+    valid_from: 2026-09-10
+    valid_until: 2029-09-09
+    notes: >-
+      UKAS-accredited certification (UKAS 8289), subject to annual surveillance assessments.
+      Initial certification and latest issue both 10 September 2026, following the remote
+      Stage 2 audit of 26/08/2026 which recorded zero major and zero minor nonconformities.
+      Certificate PDF retained in the QMS/ISMS document library.
+    scope: >-
+      Provision of industrial software development and consultancy services, including
+      production software integration, system standardisation and manufacturing execution
+      system support, for automotive and manufacturing customers from the UK and Europe for
+      clients globally
+    evidence:
+      - evidence_id: management-system-docs-as-code
+        note: The management system itself, audited as ISO 9001 and ISO 27001 conformant.
+
+  - id: iso-27001-2022
+    kind: certification
+    name: ISO/IEC 27001:2022
+    issuer: British Assessment Bureau Limited t/a Amtivo
+    reference: "273056"
+    entity_ids: [mark-aber-freiberuflich, aber-industrial-solutions-ltd]
+    status: active
+    valid_from: 2026-09-10
+    valid_until: 2029-09-09
+    notes: >-
+      UKAS-accredited certification (UKAS 8289), subject to annual surveillance assessments.
+      Certified in accordance with the Statement of Applicability dated 20/08/2026, so that
+      document must stay aligned with the certificate. A Mercedes-Benz requirement of
+      04/07/2025 made this certificate a condition of continuing as a supplier. Certificate
+      PDF retained in the QMS/ISMS document library.
+    scope: >-
+      Provision of industrial software development and consultancy services, including
+      production software integration, system standardisation, and manufacturing execution
+      system (MES) support, for the automotive and manufacturing sectors from the UK and
+      Europe for clients globally.
+    evidence:
+      - evidence_id: management-system-docs-as-code
+        note: Statement of Applicability, registers and document change control.
+      - evidence_id: iso-27001-certification-programme
+        note: Stage 1 and Stage 2 audits passed with zero major nonconformities.
+
+# Each entity is registered as a Mercedes-Benz supplier in its own right, with its own
+# supplier number. A bid must quote the number of the entity actually bidding.
+supplier_qualifications:
+  - id: mercedes-benz-supplier-de
+    kind: supplier_qualification
+    name: Mercedes-Benz AG supplier
+    issuer: Mercedes-Benz AG
+    reference: LN 10164390
+    entity_ids: [mark-aber-freiberuflich]
+    status: active
+    notes: >-
+      Treated as active on the strength of the 04/07/2025 requirement to hold ISO 27001 in
+      order to continue as a supplier, which has since been met, and of systems in
+      continuous production at Mercedes-Benz plants.
+    scope: Industrial software, SCADA/HMI engineering and maintenance systems.
+    evidence:
+      - evidence_id: iso-27001-certification-programme
+        note: >-
+          A customer email of 04/07/2025 made a valid ISO 27001 certificate a condition of
+          continuing as a supplier, which evidences the supplier relationship itself.
+
+  - id: mercedes-benz-supplier-gb
+    kind: supplier_qualification
+    name: Mercedes-Benz AG supplier
+    issuer: Mercedes-Benz AG
+    reference: LN 15152697
+    entity_ids: [aber-industrial-solutions-ltd]
+    status: active
+    scope: Industrial software, SCADA/HMI engineering and maintenance systems.
+
+capabilities:
+  - subject: scada-architecture
+    label: SCADA and HMI architecture
+    evidence:
+      - evidence_id: integra-scada-standard-rastatt
+        note: Co-developed the architecture that became the Mercedes-Benz corporate standard.
+      - evidence_id: duerr-high-bay-storage-hmi
+        note: Backend-heavy InTouch architecture stable at high load.
+
+  - subject: hmi-standardisation
+    label: Enterprise HMI standardisation
+    evidence:
+      - evidence_id: integra-scada-standard-rastatt
+        note: >-
+          The resulting Integra standard became the corporate HMI and SCADA standard of
+          Mercedes-Benz AG.
+      - evidence_id: intouch-window-migration
+        note: ~1,000 windows brought onto the new standard.
+
+  - subject: industrial-digitalisation
+    label: Manufacturing digitalisation
+    evidence:
+      - evidence_id: integra-scada-standard-rastatt
+        note: >-
+          The standardisation programme as a whole: converting fragmented, manually
+          engineered systems into a structured, reusable platform, and forming part of the
+          technical foundation for the later Smart Factory and Digital Factory initiatives.
+      - evidence_id: integra-multi-site-rollout
+        note: >-
+          Extension of the standard into KPI systems, compliance and log analysis, and
+          management-information support across multiple sites.
+      - evidence_id: resource-and-fault-management
+        note: >-
+          Replaced manual, after-the-event fault documentation with live mobile capture,
+          central resource planning and statistical analysis.
+
+  - subject: wonderware-intouch
+    label: Wonderware / InTouch
+    evidence:
+      - evidence_id: integra-scada-standard-rastatt
+        note: Capacity optimisation, templates, alarms and the mimic-generation wizard.
+      - evidence_id: duerr-high-bay-storage-hmi
+        note: Full HMI implementation on the InTouch platform.
+      - evidence_id: intouch-window-migration
+        note: Migration of the installed InTouch estate.
+
+  - subject: integra-iportal
+    label: Integra iPortal and DesignerPro
+    evidence:
+      - evidence_id: integra-multi-site-rollout
+        note: Implementation and expansion across production and building-technology sites.
+      - evidence_id: tfa-tga-form-automation
+        note: The company's iPortal project-generation toolchain.
+      - evidence_id: integra-validation-tool
+        note: IDF and DesignerPro readers in the QA tool.
+
+  - subject: legacy-system-migration
+    evidence:
+      - evidence_id: intouch-window-migration
+        note: >-
+          ~1,000 existing InTouch windows migrated with old and new systems running in
+          parallel and production continuity maintained.
+      - evidence_id: integra-scada-standard-rastatt
+        note: Staged coexistence and migration management across the plant.
+
+  - subject: alarm-management
+    evidence:
+      - evidence_id: integra-scada-standard-rastatt
+        note: Manual InTouch alarms migrated to a centrally managed system with a standard structure.
+
+  - subject: engineering-automation
+    evidence:
+      - evidence_id: integra-scada-standard-rastatt
+        note: An InTouch wizard generating functional-group mimics with automatic addressing.
+      - evidence_id: tfa-tga-form-automation
+        note: Spreadsheet-driven generation of complete SCADA projects.
+
+  - subject: quality-assurance-tooling
+    evidence:
+      - evidence_id: scada-quality-assurance-tool
+        note: Automated verification of supplier projects against customer programming standards.
+      - evidence_id: integra-validation-tool
+        note: The current generation of the same capability, across four project formats.
+
+  - subject: supplier-qa-coordination
+    evidence:
+      - evidence_id: scada-quality-assurance-tool
+        note: Supplier check-in/check-out coordination and controlled integration of changes.
+
+  - subject: kpi-systems
+    label: Industrial data processing and KPI systems
+    evidence:
+      - evidence_id: integra-multi-site-rollout
+        note: >-
+          Reusable KPI templates and PLC-to-SCADA information processing, supporting
+          management-information systems across sites.
+      - evidence_id: iportal-project-estate
+        note: >-
+          KPI definitions carried through the generated building projects, with per-zone
+          setpoints and data collectors specified in the source workbook.
+
+  - subject: third-party-system-integration
+    label: Integration of non-conforming third-party systems
+    evidence:
+      - evidence_id: integra-scada-standard-rastatt
+        note: >-
+          The Dürr APT HMI in the Body Shop was adapted in cooperation with Dürr so that its
+          architecture, interfaces, data structures and operating logic aligned with the new
+          plant standard.
+
+  - subject: user-authorisation-systems
+    evidence:
+      - evidence_id: integra-scada-standard-rastatt
+        note: >-
+          A structured HMI authorisation concept controlling function execution by user type,
+          activity and plant location, driven by an activity-code matrix referenced from
+          individual detail windows so safety-critical functions could be restricted.
+      - evidence_id: iportal-project-estate
+        note: >-
+          Authorisation-class parameters in the template library that grey out and disable
+          controls for unauthorised users, updating dynamically as the user's level changes.
+
+  - subject: plc-integration
+    label: PLC / HMI / SCADA integration
+    evidence:
+      - evidence_id: integra-scada-standard-rastatt
+        note: Multi-application architecture across several hundred PLCs.
+      - evidence_id: integra-multi-site-rollout
+        note: PLC-to-SCADA information processing across sites.
+
+  - subject: manufacturing-information-systems
+    evidence:
+      - evidence_id: integra-multi-site-rollout
+        note: Support for management-information systems and KPI templates.
+      - evidence_id: resource-and-fault-management
+        note: Fault data combined with workforce coordination and statistical analysis.
+
+  # The summary's own conclusion names this as the company's distinguishing capability:
+  # "the standards, reusable architectures, validation tools, migration processes, and
+  # supporting software required to make large industrial systems sustainable over the long
+  # term". It is also two of the twelve stated company-level outcomes.
+  - subject: long-term-maintainability
+    label: Long-term maintainability and system life extension
+    evidence:
+      - evidence_id: integra-scada-standard-rastatt
+        note: >-
+          Capacity optimisation created room for further plant expansion without requiring
+          an immediate complete replacement of the installed HMI platform, and the resulting
+          architecture was modular, scalable and maintainable enough to support continued
+          expansion.
+      - evidence_id: duerr-high-bay-storage-hmi
+        note: >-
+          A modular architecture that let the physical storage system expand without
+          fundamental redesign, with diagnostics and structured data handling improving
+          maintainability.
+      - evidence_id: iportal-project-estate
+        note: >-
+          72 building projects kept under version control and standardised in one pass,
+          so that a decade-old estate stays maintainable and verifiable.
+      - evidence_id: tfa-tga-form-automation
+        note: Five years of continuous maintenance on the tool the estate is generated from.
+
+  # Stated as the delivery model in its own right: disciplines combined rather than handed
+  # between specialists, which is what brownfield work demands.
+  - subject: end-to-end-delivery
+    label: End-to-end delivery across disciplines
+    evidence:
+      - evidence_id: integra-scada-standard-rastatt
+        note: >-
+          Analysis of the existing landscape, definition of standards and reusable
+          architecture, engineering tooling, implementation and migration, supplier
+          validation, staged testing, production trial operation, operator training and
+          long-term support — carried out as one programme rather than separate activities.
+      - evidence_id: resource-and-fault-management
+        note: >-
+          Problem analysis through to a delivered desktop and mobile system with central
+          resource planning and statistical analysis behind it.
+
+  - subject: production-environment-delivery
+    label: Delivery in live production environments
+    evidence:
+      - evidence_id: integra-scada-standard-rastatt
+        note: >-
+          Old and new systems operated in parallel throughout the transition, with staged
+          coexistence, change integration and quality assurance, because the plant could not
+          be cut over in one step.
+      - evidence_id: intouch-window-migration
+        note: >-
+          ~1,000 windows migrated while continuity of production and alarm visibility was
+          maintained.
+      - evidence_id: mis-manufacturing-information-system
+        note: >-
+          Delivered onto locked-down plant-floor infrastructure with no package-manager
+          access, and documented so the deployment could be repeated.
+
+  - subject: commissioning-and-acceptance
+    evidence:
+      - evidence_id: integra-scada-standard-rastatt
+        note: >-
+          Module, integration and factory acceptance testing, on-site acceptance and
+          production trial operation before series operation.
+
+  - subject: operator-training
+    evidence:
+      - evidence_id: integra-scada-standard-rastatt
+        note: Structured operator and plant-personnel training as part of the rollout.
+
+  - subject: infrastructure-and-security
+    evidence:
+      - evidence_id: cloud-server-config
+        note: The company's production infrastructure, declarative and reproducible.
+      - evidence_id: iso-27001-certification-programme
+        note: Certified information-security management with zero major nonconformities.
+
+  - subject: iso-management-systems
+    evidence:
+      - evidence_id: management-system-docs-as-code
+        note: ISO 9001 and ISO 27001 management system under document change control.
+      - evidence_id: iso-27001-certification-programme
+        note: Stage 1 and Stage 2 audits passed.
+
+technologies:
+  - subject: siemens-plc
+    label: Siemens STEP 7 and TIA Portal
+    evidence:
+      - evidence_id: integra-validation-tool
+        note: Parsers for STEP 7 AWL and TIA Portal projects.
+      - evidence_id: integra-multi-site-rollout
+        note: Siemens PLC environments across production and building technology.
+
+  - subject: apache-solr
+    evidence:
+      - evidence_id: resource-and-fault-management
+        note: Search-driven fault and stoppage information system.
+
+  - subject: nixos
+    evidence:
+      - evidence_id: cloud-server-config
+        note: Two production NixOS hosts, declaratively provisioned.
+
+industries:
+  - subject: automotive-manufacturing
+    label: Automotive manufacturing
+    evidence:
+      - evidence_id: integra-scada-standard-rastatt
+        note: Mercedes-Benz AG, Rastatt and subsequent corporate rollout.
+      - evidence_id: duerr-high-bay-storage-hmi
+        note: Dürr Systems AG, high-bay vehicle storage in an automotive plant.
+      - evidence_id: resource-and-fault-management
+        note: Maintenance organisation at the Rastatt plant.
+
+  - subject: chemicals
+    evidence:
+      - evidence_id: integra-multi-site-rollout
+        note: INEOS AG, implementation and expansion of Integra-based systems.
+
+  - subject: building-services-tga
+    label: Building services (TGA)
+    evidence:
+      - evidence_id: integra-multi-site-rollout
+        note: Building-technology systems for more than 70 buildings in Sindelfingen.
+      - evidence_id: tfa-tga-form-automation
+        note: The generation toolchain for those projects.
+
+# Attribution matters: procurement commonly asks for references delivered by the bidding
+# entity itself. The four below predate the 2022 incorporation of the Ltd and so belong to
+# the German sole trader. This is inferred from the entities' trading dates, not stated by a
+# record — confirm before relying on it in a bid.
+project_references:
+  - id: mercedes-benz-rastatt-integra
+    delivered_by: mark-aber-freiberuflich
+    title: Enterprise SCADA architecture and manufacturing standardisation
+    client: Mercedes-Benz AG
+    summary: >-
+      Modernisation and standardisation of the HMI and SCADA architecture at the Rastatt plant,
+      replacing the tag-exhausted BSR/InTouch environment while preserving production
+      continuity. The resulting Integra standard became the corporate HMI and SCADA standard of
+      Mercedes-Benz AG.
+    capabilities: [scada-architecture, hmi-standardisation, wonderware-intouch,
+                   legacy-system-migration, alarm-management]
+    evidence:
+      - evidence_id: integra-scada-standard-rastatt
+      - evidence_id: intouch-window-migration
+
+  - id: duerr-high-bay-storage
+    delivered_by: mark-aber-freiberuflich
+    title: HMI for high-bay car storage
+    client: Dürr Systems AG
+    summary: >-
+      An InTouch HMI for a high-bay vehicle-storage system with large parameter sets, dynamic
+      vehicle movement and extensive storage-state visualisation. A backend-heavy architecture
+      moved processing into scripting and addressed frontend tags indirectly, keeping the system
+      stable under load and expandable without redesign.
+    capabilities: [scada-architecture, wonderware-intouch]
+    evidence:
+      - evidence_id: duerr-high-bay-storage-hmi
+
+  - id: ineos-integra
+    delivered_by: mark-aber-freiberuflich
+    title: Integra SCADA implementation and expansion
+    client: INEOS AG
+    summary: >-
+      Implementation and expansion of Integra-based SCADA systems, alongside Mercedes-Benz
+      production environments in Hambach and Kecskemét and building-technology systems in
+      Sindelfingen.
+    capabilities: [plc-integration, integra-iportal]
+    evidence:
+      - evidence_id: integra-multi-site-rollout
+
+  # Deliberately unattributed: this reference spans both entities. The original QA tool is
+  # pre-2022 work, while integra-validation-tool is 2025-26. Splitting it into two
+  # references, one per entity, is probably the honest fix once it matters for a bid.
+  - id: scada-qa-tool
+    title: SCADA quality-assurance tool
+    client: Mercedes-Benz AG
+    summary: >-
+      A QA/QC analysis tool verifying supplier-delivered PLC, HMI and SCADA projects against
+      customer-defined programming standards, linking findings to affected components and
+      generating non-conformity reports. Deviations are caught before they reach production,
+      improving supplier accountability and shortening commissioning.
+    capabilities: [quality-assurance-tooling, supplier-qa-coordination]
+    evidence:
+      - evidence_id: scada-quality-assurance-tool
+      - evidence_id: integra-validation-tool
+
+  - id: mercedes-benz-resource-fault-management
+    delivered_by: mark-aber-freiberuflich
+    title: Resource and fault management
+    client: Mercedes-Benz AG
+    summary: >-
+      A maintenance system combining live plant fault data with workforce coordination: mobile
+      access to fault information, direct task assignment, on-site documentation with photos and
+      annotations, central resource planning, team dashboards and statistical fault analysis.
+      Reduced response times and created a central view of open work and personnel activity.
+    capabilities: [manufacturing-information-systems]
+    evidence:
+      - evidence_id: resource-and-fault-management
+      - evidence_id: mira-mobile-maintenance

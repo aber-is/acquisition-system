@@ -1,0 +1,291 @@
+# Person profile: Mark Aber
+#
+# Capabilities cite the evidence library under data/evidence/. Each citation's note says
+# what Mark contributed to that project — that note is what makes the claim his.
+#
+# Only capabilities that are both evidenced and plausibly current are claimed. The pre-1996
+# technologies in his evidence — PL/M-86, LISP, Visual Basic, Siemens WinCC, and InTouch as
+# a product — are recorded as career history, not as things to put in front of a client
+# today. His stated headline is general SCADA knowledge, standardisation and industrial
+# digital transformation, with a pivot towards managerial work.
+
+id: mark
+name: Mark Aber
+
+location:
+  country: GB
+  region: East Sussex
+  city: Crowborough
+
+availability:
+  as_of: 2026-09-28
+
+preferred_workload:
+  minimum_percentage: 80
+  maximum_percentage: 100
+  original_text: 80-100%
+
+commercial_expectations:
+  minimum_rate:
+    unit: hour
+    minimum:
+      amount: "100"
+      currency: CHF
+
+work_location_preference:
+  accepted_modes: [onsite, hybrid, remote]
+  notes: Available for UK, European and international assignments.
+
+languages:
+  - language: en
+    level: native
+  - language: de
+    level: professional
+    notes: >-
+      Fluent written and spoken, not native. Professional rather than a CEFR level because
+      no CEFR assessment has been made.
+    evidence:
+      - evidence_id: early-hmi-scada-career
+        note: >-
+          Delivered and commissioned systems for German customers from 1989, based in
+          Stuttgart and Metzingen.
+      - evidence_id: wonderware-invensys-vendor-coordination
+        note: Represented plant requirements with Wonderware's German organisation.
+
+preferred_role_types:
+  - senior consulting
+  - management
+excluded_role_types: []
+
+eligibility:
+  - kind: citizenship
+    country: GB
+    description: British citizen.
+    holds: true
+
+  - kind: citizenship
+    country: DE
+    description: >-
+      German citizen, and therefore an EU national covered by the Switzerland-EU agreement
+      on the free movement of persons.
+    holds: true
+
+credentials:
+  - id: coventry-beng-computer-and-control-systems
+    kind: qualification
+    name: B.Eng. Computer and Control Systems
+    issuer: Coventry Polytechnic
+    status: active
+    valid_from: 1986-01-01
+    notes: >-
+      Completed with commendation. Final project covered data-acquisition visualisation:
+      communicating with a measurement device through a protocol he implemented and
+      presenting the measured values graphically. Included sponsored industrial experience
+      with British Timken.
+
+capabilities:
+  - subject: scada-architecture
+    label: SCADA and HMI architecture
+    evidence:
+      - evidence_id: integra-scada-standard-rastatt
+        note: >-
+          SCADA specialist on the Integra kernel team, contributing SCADA architecture, HMI
+          standards, engineering methods, quality requirements and implementation strategy.
+      - evidence_id: duerr-high-bay-storage-hmi
+        note: Backend-heavy InTouch architecture for a high-bay vehicle-storage system.
+
+  - subject: hmi-standardisation
+    label: Enterprise HMI standardisation
+    evidence:
+      - evidence_id: integra-scada-standard-rastatt
+        note: >-
+          Moved plant engineering from project-specific implementations and manual workflows
+          towards reusable standards, templates and structured supplier requirements.
+      - evidence_id: intouch-window-migration
+        note: Led and supported the migration of more than 1,000 HMI screens and functions.
+
+  - subject: industrial-digitalisation
+    label: Industrial digital transformation
+    evidence:
+      - evidence_id: integra-scada-standard-rastatt
+        note: >-
+          SCADA specialist on the kernel team for the full transformation programme, not one
+          strand of it: capacity optimisation, a reusable template system, a structured
+          authorisation concept, centrally managed alarms replacing manual PLC-to-HMI
+          handovers, wizard-based generation replacing manual engineering, a
+          multi-application architecture across several hundred PLCs, integration of
+          non-conforming third-party systems, staged testing into production, and operator
+          adoption — carried out on a live plant that could not stop. The programme became
+          the Mercedes-Benz corporate standard and part of the technical foundation for the
+          later Smart Factory and Digital Factory initiatives.
+      - evidence_id: integra-multi-site-rollout
+        note: >-
+          Carried the standard across production and building-technology sites, extending it
+          into KPI, log-analysis and management-information capability.
+      - evidence_id: resource-and-fault-management
+        note: >-
+          Extended the SCADA environment into maintenance, coordination and operational
+          decision-making.
+
+  - subject: legacy-system-migration
+    evidence:
+      - evidence_id: intouch-window-migration
+        note: >-
+          Coexistence strategy, migration planning, change tracking and conversion of legacy
+          HMI functionality while production continued in a live automotive factory.
+      - evidence_id: integra-scada-standard-rastatt
+        note: Staged migration across a plant that could not be cut over in one step.
+
+  - subject: alarm-management
+    evidence:
+      - evidence_id: integra-scada-standard-rastatt
+        note: >-
+          Replaced manual transfer of alarm information from PLC programmers to HMI engineers
+          with more automated data paths.
+
+  - subject: plc-integration
+    label: PLC / HMI / SCADA integration
+    evidence:
+      - evidence_id: early-hmi-scada-career
+        note: PLC-to-HMI integration across automotive press works and process industries.
+      - evidence_id: integra-scada-standard-rastatt
+        note: Multi-application architecture across several hundred PLCs.
+
+  - subject: commissioning-and-acceptance
+    evidence:
+      - evidence_id: rastatt-intouch-commissioning
+        note: >-
+          Worked a 2,000-issue defect backlog through to plant acceptance, then plant-wide
+          commissioning and Y2K compliance across Body Shop, Paint Shop and Assembly.
+      - evidence_id: early-hmi-scada-career
+        note: Commissioned SCADA/HMI systems on customer production sites from 1989.
+
+  - subject: production-environment-delivery
+    label: Delivery in live production environments
+    evidence:
+      - evidence_id: rastatt-intouch-commissioning
+        note: >-
+          Took an installation carrying more than 2,000 documented defects through to plant
+          acceptance, then supported commissioning and Y2K compliance plant-wide without
+          interrupting production.
+      - evidence_id: intouch-window-migration
+        note: >-
+          Kept both generations of HMI running in parallel across a live automotive factory
+          for the length of the migration, preserving production and alarm visibility
+          throughout.
+      - evidence_id: integra-scada-standard-rastatt
+        note: >-
+          Module, integration and factory acceptance testing, on-site acceptance and
+          production trial operation before anything entered series operation.
+
+  - subject: supplier-qa-coordination
+    evidence:
+      - evidence_id: scada-quality-assurance-tool
+        note: >-
+          Checked third-party HMI and SCADA work, resolved deviations and coordinated
+          controlled integration so that multiple suppliers kept to one plant architecture.
+
+  - subject: quality-assurance-tooling
+    evidence:
+      - evidence_id: scada-quality-assurance-tool
+        note: Developed the QA/QC methods and tools used to verify supplier deliverables.
+
+  - subject: engineering-automation
+    evidence:
+      - evidence_id: integra-scada-standard-rastatt
+        note: >-
+          Wizard-based generation and reusable structures, replacing labour-intensive manual
+          HMI engineering.
+
+  - subject: vendor-coordination
+    evidence:
+      - evidence_id: wonderware-invensys-vendor-coordination
+        note: >-
+          Represented Mercedes-Benz and system-integrator requirements with Wonderware/Invensys
+          in Germany and the United States.
+
+  # Named twice in his headline experience: working across organisational boundaries, and
+  # coordinating without relying on direct reporting lines. Distinct from vendor-coordination
+  # and supplier QA — it is the capability of getting a programme delivered by people who do
+  # not work for you.
+  - subject: cross-organisational-coordination
+    label: Programme coordination without reporting lines
+    evidence:
+      - evidence_id: integra-scada-standard-rastatt
+        note: >-
+          Worked inside a kernel team drawing together internal plant specialists and major
+          suppliers including Siemens and Dürr, none of whom reported into one project
+          organisation.
+      - evidence_id: wonderware-invensys-vendor-coordination
+        note: >-
+          Translated between production requirements, system architecture, engineering
+          constraints and a software vendor's own roadmap, with no authority over any of them.
+      - evidence_id: scada-quality-assurance-tool
+        note: >-
+          Held multiple competing suppliers to one plant standard through check-in/check-out
+          coordination and controlled integration rather than through contract authority.
+      - evidence_id: aber-industrial-solutions-leadership
+        note: >-
+          Four decades coordinating customers, suppliers, system integrators, software vendors
+          and specialist contractors across more than 100 customer organisations.
+
+  - subject: programme-leadership
+    evidence:
+      - evidence_id: aber-industrial-solutions-leadership
+        note: >-
+          Founder and Managing Director since 1996, combining company direction with senior
+          technical delivery across more than 100 customer organisations.
+
+  - subject: commercial-negotiation
+    evidence:
+      - evidence_id: aber-industrial-solutions-leadership
+        note: Commercial proposals, negotiation, and financial and resource planning.
+
+  - subject: iso-management-systems
+    evidence:
+      - evidence_id: management-system-docs-as-code
+        note: >-
+          Management system lead, per the roles, responsibilities and competence register:
+          coordinates the ISO 9001/27001 system, audit preparation, corrective actions and
+          document control.
+      - evidence_id: iso-27001-certification-programme
+        note: Led the certification work; attended the Stage 2 audit.
+
+  - subject: manufacturing-information-systems
+    evidence:
+      - evidence_id: resource-and-fault-management
+        note: >-
+          Maintenance support, fault and resource management, plant software transparency and
+          MES-related functionality built around the SCADA environment.
+
+domains:
+  - subject: automotive-manufacturing
+    label: Automotive manufacturing
+    evidence:
+      - evidence_id: rastatt-intouch-commissioning
+        note: Mercedes-Benz Rastatt, from commissioning through to plant-wide support.
+      - evidence_id: integra-scada-standard-rastatt
+        note: Integra kernel team and the subsequent corporate rollout.
+      - evidence_id: integra-multi-site-rollout
+        note: >-
+          SCADA and related work across Rastatt, Sindelfingen, Bremen, Wörth, Hambach,
+          Kecskemét and East London.
+
+  - subject: chemicals
+    label: Chemical and petrochemical industry
+    evidence:
+      - evidence_id: early-hmi-scada-career
+        note: >-
+          SCADA/HMI delivery for chemical production customers at INTEC, and chemical and
+          petrochemical projects at AST.
+      - evidence_id: integra-multi-site-rollout
+        note: Integra-based systems for INEOS AG.
+
+  - subject: industrial-automation
+    evidence:
+      - evidence_id: british-timken-vibration-analysis
+        note: >-
+          Bearing-vibration analysis systems: data acquisition, device interfaces and
+          control-system integration.
+      - evidence_id: early-hmi-scada-career
+        note: Proprietary HMI/SCADA product development at AFE Technologies.
